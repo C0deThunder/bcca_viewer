@@ -1,25 +1,5 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if team %}{{ team.name }}{% else %}Hello{% endif %}</title>
-    <link rel="stylesheet" href="{% static "styles.css" %}">
-</head>
-<body>
-    {% if team %}
-    <a href="/"><h1 class="t_h1">{{ team.name }}</h1></a>
-    <p class="t_p">{{ team.desc }}</p>
-    <h2 class="t_h2_m">Members</h1>
-    <h2 class="t_h2_d">Decription</h1>
-    <ul class="t_ul">
-        {% for person in team.members %}
-        <li>{{ person }}</li>
-        {% endfor %}
-    </ul>
-    {% else %}
+{% extends "base.html" %}
+{% block content %}
     <h1 class="teams_h1">Project Teams</h1>
     <ul class="teams_ul">
         {% for team in groups %}
@@ -28,6 +8,4 @@
         </a>
         {% endfor %}
     </ul>
-    {% endif %}
-</body>
-</html>
+{% endblock content %}

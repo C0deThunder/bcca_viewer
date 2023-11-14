@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <a href="/"><h1 class="t_h1">{{ team.name }}</h1></a>
+    <p class="t_p">{{ team.desc }}</p>
+    <h2 class="t_h2_m">Members</h1>
+    <h2 class="t_h2_d">Decription</h1>
+    <ul class="t_ul">
+        {% for person in team.members %}
+        <li>{{ person }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
